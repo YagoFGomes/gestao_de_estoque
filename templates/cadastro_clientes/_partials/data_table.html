@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+    <head>
+        <!-- Custom fonts for this template -->
+        <link href="{% static 'base/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="{% static 'base/assets/css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+        <!-- Custom styles for this page -->
+        <link href="{% static 'base/assets/vendor/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- table -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid w-75">
+
+            <!-- Page Heading -->
+            <div class="d-flex justify-content-between mb-4">
+                <h1 class="h3 mb-2 text-gray-800 ">Clientes cadastrados</h1>
+                
+                <a href="{% url 'novo_cliente' %}"><button class="btn btn-outline-success">Novo cliente</button></a>
+            </div>
+            
+            
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4 " style="margin: 0 auto;">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Nome</th>
+                                    <th class="text-center">Sobrenome</th>
+                                    <th class="text-center">Telefone</th>
+                                    <th class="text-center">Detalhes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for cliente in clientes_cadastrados %}
+                                <tr>
+                                    <td class="text-center">{{cliente.nome}}</td>
+                                    <td class="text-center">{{cliente.sobrenome}}</td>
+                                    <td class="text-center">{{cliente.telefone}}</td>
+                                    <td class="text-center"><button class="btn btn-success text-white">Detalhes</button></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+        <!-- end table -->
+
+        
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="{% static 'base/assets/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'base/assets/vendor/bootstrap_admin/js/bootstrap.bundle.min.js' %}"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="{% static 'base/assets/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="{% static 'base/assets/js/sb-admin-2.min.js' %}"></script>
+
+        <!-- Page level plugins -->
+        <script src="{% static 'base/assets/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'base/assets/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="{% static 'base/assets/js/demo/datatables-demo.js' %}"></script>
+
+    </body>
+</html>
+
+
+
+
+

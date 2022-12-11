@@ -1,0 +1,37 @@
+ <!-- General Form Elements -->
+ <form method="POST" action="{% url 'novo_cliente' %}"> {% csrf_token %}
+    <div class="container d-flex flex-column" style="width: 800px;">
+        <div class="row mb-3">
+        <div class="col-sm-12">
+            <label for="inputText" class="col-sm-2 col-form-label">Nome *</label>
+            <input type="text" class="form-control" name="nome" required>
+        </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Sobrenome *</label>
+            <input type="text" class="form-control"  name="sobrenome" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+        <div class="col-sm-12">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Telefone *</label>
+            <input type="number" class="form-control" name="telefone" required>
+            
+        </div>
+        </div>
+        <div class="row mb-3">
+        <div class="col-sm-12">
+            <label for="inputNumber" class="col-sm-2 col-form-label">Endereço</label>
+            <input type="text" class="form-control" name="endereco">
+        </div>
+        </div>
+
+        <div class="row mb-3">
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </div>
+        </div>
+    </div>
+
+  </form><!-- End General Form Elements -->
